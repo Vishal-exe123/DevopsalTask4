@@ -1,9 +1,11 @@
 FROM  centos
 
 RUN  yum install httpd  -y
+RUN  yum install php  -y
+RUN  yum install  /sbin/service  -y
 
 COPY  mywebsite/   /var/www/html
 
 EXPOSE  80
 
-CMD  /usr/sbin/httpd  -DFOREGROUND
+CMD  /usr/sbin/httpd  -DFOREGROUND  && /bin/bash
